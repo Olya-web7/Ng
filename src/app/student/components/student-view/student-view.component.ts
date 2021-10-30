@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Student } from '../../models/student';
 
 @Component({
@@ -8,4 +8,11 @@ import { Student } from '../../models/student';
 })
 export class StudentViewComponent {
   @Input() public student!: Student;
+  @Output() public grades = new EventEmitter();
+
+  public getGrades() {
+    this.grades.emit(
+      this.student.curriculum
+    );
+  }
 }

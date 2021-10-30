@@ -1,6 +1,5 @@
 <mat-card>
-  <mat-card-title>
-    <!-- interpolation -->
+  <mat-card-title (click)="getGrades()">
     {{student.lastName}} {{student.firstName}}
   </mat-card-title>
   <mat-card-content>
@@ -9,8 +8,8 @@
         <td>Gender</td> <td>{{student.gender}}</td>
       </tr>
     </table>
-    <app-curriculum [curriculum]="student.curriculum">
-      
+    <app-curriculum [curriculum]="student.curriculum!">
+
     </app-curriculum>
   </mat-card-content>
 </mat-card>
